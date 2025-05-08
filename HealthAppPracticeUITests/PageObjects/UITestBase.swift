@@ -21,19 +21,19 @@ class UITestBase: XCTestCase {
         }
             
         if app.state != .notRunning {
-            logger.log("🔴 Terminating existing app instance")
+            logger.log("🔴 Terminating existing app instance...")
             app.terminate()
         }
 
-        logger.log("🚀 Launching the app")
+        logger.log("🚀 Launching the app...")
         app.launch()
             
-        logger.log("🟢 App Launched Successfully")
+        logger.log("🟢 App Launched Successfully!")
     }
     
     override func tearDown() {
         // Log test completion
-        logger.log("🏁 Test Completed")
+        logger.log("🏁 Test Completed!")
         
         // Terminate the app to reset any state between tests
         if app.state != .notRunning {
