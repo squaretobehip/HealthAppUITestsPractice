@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "FB1C55AA-5F23-427C-B908-7371339455E5",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:HealthAppPractice.xcodeproj",
+      "identifier" : "C60B18AA2DADC064003D86CF",
+      "name" : "HealthAppPractice"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:HealthAppPractice.xcodeproj",
+        "identifier" : "C60B18B72DADC066003D86CF",
+        "name" : "HealthAppPracticeTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:HealthAppPractice.xcodeproj",
+        "identifier" : "C60B18C12DADC066003D86CF",
+        "name" : "HealthAppPracticeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
