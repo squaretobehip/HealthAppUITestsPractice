@@ -24,7 +24,7 @@ class BrowseActivityPageTests: UITestBase {
     
     func testActivityCategories() {
         logger.log("👆 Selecting the 'Browse' tab button.")
-        summaryPage.clickBrowseTabButton()
+        summaryPage.tapBrowseTabButton()
         logger.log("👆 Selecting the 'Activity' button.")
         browsePage.clickActivityButton()
         logger.log("👆Clicking on 'Active Energy' button.")

@@ -64,10 +64,39 @@ class SummaryPageTests: UITestBase {
         
     }
     
+    func testScrollToBottomAndBackToTop() {
+        // Scroll to the bottom
+        logger.log("📜 Scrolling to Apps section...")
+        summaryPage.scrollToAppsSection()
+        
+        let appsSectionHeader = app.staticTexts["Apps"]
+        // Check if the "Apps" section is now visible
+        XCTAssertTrue(appsSectionHeader.exists && appsSectionHeader.isHittable, "Apps section should be found after scrolling...")
+        logger.log("✅ 'Apps' header is in view.")
+        
+        // Scroll back to the top
+        logger.log("📜 Scrolling back to the top of the page...")
+        summaryPage.scrollToTopOfPage()
+        let pinnedPageHeader = app.staticTexts["Pinned"]
+        // Check if the "Pinned" section is now visible
+        XCTAssertTrue(pinnedPageHeader.exists && pinnedPageHeader.isHittable, "Pinned section should be found after scrolling...")
+        logger.log("✅ Test Complete - Successfully scrolled to the bottom and back to the top of the page.")
+    }
+    
     func testPinnedEditButton() {
-        logger.log("👆 Tapping on Pinned 'Edit' button")
+        logger.log("👆 Tapping on Pinned 'Edit' button...")
         summaryPage.tapSummaryPagePinnedEditButton()
         sleep(2)
+    }
+    
+    func testShowAllHealthDataButton() {
+        logger.log("👆 Tapping on 'Show All Health Data' button...")
+        summaryPage.tapShowAllHealthDataButton()
+        sleep(2)
+        XCTAssertTrue(app.staticTexts["All Health Data"].waitForExistence(timeout: 5), "'All Health Data' heading should exist")
+        logger.log ("☑️ 'All Health Data' heading is visible.")
+        logger.log("👈 Tapping 'Summary' button to return to main Summary page...")
+        summaryPage.tapSummaryBackButton()
     }
 
 }

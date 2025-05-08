@@ -22,7 +22,7 @@ class BrowsePageTests: UITestBase {
         // Activity
         
         logger.log("👆 Selecting the 'Browse' tab button.")
-        summaryPage.clickBrowseTabButton()
+        summaryPage.tapBrowseTabButton()
         sleep(1)
         logger.log("👆 Selecting the 'Activity' cell.")
         browsePage.clickActivityButton()

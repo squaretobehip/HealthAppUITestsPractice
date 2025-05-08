@@ -32,7 +32,7 @@ class ProfileHealthDetailsPageTests: UITestBase {
     func testProfileHealthDetailsTextFields() {
         
         logger.log("🔍 Starting input fields on Health Details page:")
-        summaryPage.clickSummaryProfileButton()
+        summaryPage.tapSummaryProfileButton()
         profilePage.clickProfileHealthDetailsCell()
         UITestHelpers.waitForPage(withTitle: "Health Details", in: app)
         logger.log("Enabling edit mode...")

@@ -50,8 +50,18 @@ class SummaryPage {
         return app.cells["Glow Eve Period Tracker, Ovulation & Flow App"]
     }
     
-    var summaryPagePinnedEditButton: XCUIElement {
+    var pinnedEditButton: XCUIElement {
         return app.buttons["UIA.Health.Pinned.Detail"]
+    }
+    
+    var showAllHealthDataButton: XCUIElement {
+        return app.cells["UIA.Health.ShowAllHealthData"]
+    }
+    
+    // This 'Summary' button is a back button to return to Summary page:
+    
+    var summaryBackButton: XCUIElement {
+        return app.navigationBars.buttons["Summary"]
     }
     
     // MARK: - Actions
@@ -82,8 +92,18 @@ class SummaryPage {
     }
     
     func tapSummaryPagePinnedEditButton() {
-        XCTAssert(summaryPagePinnedEditButton.waitForExistence(timeout: 5), "The 'Pinned' edit button does not exist.")
-        summaryPagePinnedEditButton.tap()
+        XCTAssert(pinnedEditButton.waitForExistence(timeout: 5), "The 'Pinned' edit button does not exist.")
+        pinnedEditButton.tap()
+    }
+    
+    func tapShowAllHealthDataButton() {
+        XCTAssert(showAllHealthDataButton.waitForExistence(timeout: 5), "The 'Show All Health Data' button does not exist.")
+        showAllHealthDataButton.tap()
+    }
+    
+    func tapSummaryBackButton() {
+        XCTAssert(summaryBackButton.waitForExistence(timeout: 5), "The 'Summary' back button does not exist.")
+        summaryBackButton.tap()
     }
     
     func scrollToAppsSection() {
@@ -95,6 +115,16 @@ class SummaryPage {
             app.swipeUp()  // Scroll up to reveal more content
             sleep(1) // Optional: adjust sleep if necessary for smoother scrolling
         }
+    }
+    func scrollToTopOfPage() {
+        
+        let summaryHeader = app.staticTexts["Pinned"]
+        
+        while !summaryHeader.exists && !summaryHeader.isHittable {
+            app.swipeDown()
+            sleep(1)
+        }
+    
     }
     
     func scrollToArticlesSection() {

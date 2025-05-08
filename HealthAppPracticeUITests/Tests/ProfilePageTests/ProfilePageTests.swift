@@ -29,7 +29,7 @@ class ProfilePageTests: UITestBase {
     // Test launching the Profile page and then return to the Summary page
     
     func testProfilePage() {
-        summaryPage.clickSummaryProfileButton()
+        summaryPage.tapSummaryProfileButton()
         profilePage.clickProfileDoneButton()
         
     }
@@ -37,7 +37,7 @@ class ProfilePageTests: UITestBase {
     // Test launching each category in the Profile page and then return to the Summary page
     
     func testProfileCategories() {
-        summaryPage.clickSummaryProfileButton()
+        summaryPage.tapSummaryProfileButton()
         
         profilePage.clickProfileHealthDetailsCell()
         UITestHelpers.waitForPage(withTitle: "Health Details", in: app)
@@ -75,7 +75,7 @@ class ProfilePageTests: UITestBase {
     }
     
     func testExportAllHealthDataButton() {
-        summaryPage.clickSummaryProfileButton()
+        summaryPage.tapSummaryProfileButton()
         profilePage.clickExportAllHealthButton()
         profilePage.clickExportAllHealthPopupCancelButton()
     }
