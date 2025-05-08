@@ -56,27 +56,27 @@ class SummaryPage {
     
     // MARK: - Actions
     
-    func clickSummaryProfileButton() {
+    func tapSummaryProfileButton() {
         XCTAssert(summaryProfileButton.waitForExistence(timeout: 5), "The 'Profile' button does not exist.")
         summaryProfileButton.tap()
     }
     
-    func clickProfileDoneButton() {
+    func tapProfileDoneButton() {
         XCTAssert(profileDoneButton.waitForExistence(timeout: 5), "The 'Done' button does not exist.")
         profileDoneButton.tap()
     }
     
-    func clickSummaryTabButton() {
+    func tapSummaryTabButton() {
         XCTAssert(summaryTabButton.waitForExistence(timeout: 5), "The 'Summary' tab button does not exist.")
         summaryTabButton.tap()
     }
     
-    func clickSharingTabButton() {
+    func tapSharingTabButton() {
         XCTAssert(sharingTabButton.waitForExistence(timeout: 5), "The 'Sharing' tab button does not exist.")
         sharingTabButton.tap()
     }
     
-    func clickBrowseTabButton() {
+    func tapBrowseTabButton() {
         XCTAssert(BrowseTabButton.waitForExistence(timeout: 5), "The 'Browse' tab button does not exist.")
         BrowseTabButton.tap()
     }

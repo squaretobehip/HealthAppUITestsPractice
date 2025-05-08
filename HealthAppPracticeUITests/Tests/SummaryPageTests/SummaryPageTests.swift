@@ -20,11 +20,11 @@ class SummaryPageTests: UITestBase {
     
     func testSummaryPageTabNavigation() {
         logger.log("👆 Tapping on the Sharing tab button...")
-        summaryPage.clickSharingTabButton()
+        summaryPage.tapSharingTabButton()
         logger.log("👆 Tapping on the Browse tab button...")
-        summaryPage.clickBrowseTabButton()
+        summaryPage.tapBrowseTabButton()
         logger.log("👆 Tapping on the Summary tab button.")
-        summaryPage.clickSummaryTabButton()
+        summaryPage.tapSummaryTabButton()
     }
     
     func testBottomNavStressTest() {
@@ -32,11 +32,11 @@ class SummaryPageTests: UITestBase {
         for iteration in 1...bottomNavStressTestIterations {
             logger.log("🔍 Iteration \(iteration) - Bottom Navigation stress test.")
             logger.log("👆 Tapping on the Sharing tab button...")
-            summaryPage.clickSharingTabButton()
+            summaryPage.tapSharingTabButton()
             logger.log("👆 Tapping on the Browse tab button...")
-            summaryPage.clickBrowseTabButton()
+            summaryPage.tapBrowseTabButton()
             logger.log("👆 Tapping on the Summary tab button...")
-            summaryPage.clickSummaryTabButton()
+            summaryPage.tapSummaryTabButton()
 
         }
         logger.log("✅ Stress Test Complete: \(bottomNavStressTestIterations) iterations of Bottom Navigation tab switching.")
